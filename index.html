@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablero de Vuelos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="titulo">Tablero de Vuelos</h1>
+        <button id="toggleModo" aria-label="Alternar modo">
+            <span class="icono-modo" id="iconoModo">🌙</span>
+        </button>
+    </header>
+    <main>
+        <section id="acciones">
+            <form id="busqueda">
+                <input type="text" id="codigoVuelo" placeholder="Código de vuelo (ej. LA950)">
+                <button type="submit">Buscar</button>
+                <button type="button" id="verTodos">Ver todos</button>
+            </form>
+        </section>
+    </main>
+    <section id="modalError" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" id="cerrarModal">&times;</span>
+            <div class="icono-error">
+                <svg viewBox="0 0 24 24" width="48" height="48" fill="#c62828">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+                 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59
+                 17 12 13.41 8.41 17 7 15.59 10.59 12 7
+                 8.41 8.41 7 12 10.59 15.59 7 17 8.41
+                 13.41 12 17 15.59z"/>
+                </svg>
+            </div>
+            <h2 id="modalTitulo">Error</h2>
+            <p id="modalTexto">Ha ocurrido un error inesperado.</p>
+        </div>
+    </section>
+    <footer>
+        <p>Desarrollado por Gabriel Acosta</p>
+        <p>2025</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+/* Tipografía y base */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Modo oscuro */
+body.modo-oscuro {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.modo-oscuro header,
+body.modo-oscuro footer {
+    background-color: #1e1e1e;
+    color: #eee;
+}
+
+body.modo-oscuro table {
+    background-color: #1e1e1e;
+    color: #eee;
+}
+
+body.modo-oscuro th {
+    background-color: #2c2c2c;
+    color: #ccc;
+}
+
+body.modo-oscuro td {
+    border-color: #333;
+}
+
+body.modo-oscuro #acciones input {
+    background-color: #2c2c2c;
+    color: #eee;
+    border-color: #444;
+}
+
+body.modo-oscuro #acciones button {
+    background-color: #444;
+    color: #eee;
+}
+
+body.modo-oscuro #acciones button:hover {
+    background-color: #666;
+}
+
+body.modo-oscuro .modal-contenido {
+    background-color: #3a0000;
+    color: #fdd;
+}
+
+body.modo-oscuro #toggleModo {
+    background-color: #444;
+    color: #eee;
+}
+
+body.modo-oscuro #toggleModo:hover {
+    background-color: #666;
+}
+
+/* Encabezado y pie */
+header, footer {
+    background-color: #ffffff;
+    color: #333;
+    text-align: center;
+    padding: 1.5em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+/* Botón de modo oscuro/claro */
+#toggleModo {
+    position: absolute;
+    top: 1.5em;
+    right: 2em;
+    padding: 0.6em;
+    background-color: #007aff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+#toggleModo:hover {
+    background-color: #005fcc;
+    transform: scale(1.1);
+}
+
+body.modo-oscuro #toggleModo {
+    background-color: #444;
+    color: #eee;
+}
+
+body.modo-oscuro #toggleModo:hover {
+    background-color: #666;
+}
+
+.icono-modo {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Contenido principal */
+main {
+    padding: 2em;
+    max-width: 960px;
+    margin: auto;
+}
+
+/* Tabla de vuelos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th {
+    background-color: #f2f2f2;
+    padding: 1em;
+    text-align: left;
+    font-weight: 600;
+    color: #555;
+}
+
+td {
+    padding: 1em;
+    border-top: 1px solid #eee;
+}
+
+.estado {
+    font-weight: bold;
+    padding: 0.3em 0.6em;
+    border-radius: 6px;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.estado.en-horario {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.estado.retrasado {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.estado.cancelado {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.estado.embarcando {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+img {
+    vertical-align: middle;
+    margin-right: 0.5em;
+    border-radius: 4px;
+}
+
+/* Buscador y botones */
+#acciones {
+    margin-bottom: 2em;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+#acciones input {
+    padding: 0.75em 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    flex: 1;
+    min-width: 200px;
+}
+
+#acciones button {
+    padding: 0.75em 1.2em;
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#acciones button:hover {
+    background-color: #005fcc;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(4px);
+}
+
+.modal-contenido {
+    background-color: #fdecea;
+    color: #611a15;
+    margin: 10% auto;
+    padding: 2em;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeIn 0.3s ease;
+}
+
+.icono-error {
+    margin-bottom: 1em;
+}
+
+.cerrar {
+    color: #999;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: #333;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Mensaje de error */
+.error {
+    color: #d32f2f;
+    font-weight: 500;
+    margin-top: 1em;
+}
